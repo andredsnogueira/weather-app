@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../weather.dart';
 
-const _kBaseImageUrl = 'https://www.metaweather.com/static/img/weather/png';
-
 class WeatherPage extends StatelessWidget {
   const WeatherPage({super.key});
 
