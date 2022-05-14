@@ -1,16 +1,20 @@
-# weather_app
+# Weather Application
 
-A new Flutter project.
+This project is a weather application and the location is hard-coded to fetch weather data from London.\
+Regarding the state management, this application uses Bloc/Cubit.
 
-## Getting Started
+Build using the latest [Flutter](https://flutter.dev) stable version (v.3.0.0).
 
-This project is a starting point for a Flutter application.
+This application was tested on iPhone 13 Pro Max (Emulator) using iOS 15.4.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [x] Fetch weather data from the [MetaWeather API](https://www.metaweather.com/api)
+- [x] Portrait and landscape layouts
+- [x] Toggle between Celsius and Fahrenheit
+- [x] Pull to refresh
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+![Portrait screenshot](./screenshots/portrait.png)
+![Landscape screenshot](./screenshots/landscape.png)
