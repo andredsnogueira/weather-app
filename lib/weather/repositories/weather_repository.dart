@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:weather_app/weather/repository/models/weather_day.dart';
+
+import '../weather.dart';
 
 class WeatherRepository {
   Future<List<WeatherDay>> fetchWeather() async {
