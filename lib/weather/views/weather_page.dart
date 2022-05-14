@@ -21,13 +21,13 @@ class WeatherPage extends StatelessWidget {
           create: (_) => TemperatureUnitCubit(),
         ),
       ],
-      child: const CounterView(),
+      child: const WeatherView(),
     );
   }
 }
 
-class CounterView extends StatelessWidget {
-  const CounterView({super.key});
+class WeatherView extends StatelessWidget {
+  const WeatherView({super.key});
 
   @override
   Widget build(BuildContext context) {
