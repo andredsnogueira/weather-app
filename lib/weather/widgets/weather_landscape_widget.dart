@@ -91,6 +91,9 @@ class WeatherLandscapeWidget extends StatelessWidget {
                                 style: textTheme.headline1!.copyWith(
                                   fontSize: devicePixelRatio * 40,
                                 ),
+                                key: const Key(
+                                  'weather_landscape_widget_temperature',
+                                ),
                               ),
                             ),
                           ],
