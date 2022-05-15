@@ -22,6 +22,7 @@ class WeatherLandscapeWidget extends StatelessWidget {
     );
     final textTheme = Theme.of(context).textTheme;
     final temperatureUnitCubit = context.watch<TemperatureUnitCubit>();
+    final devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -41,9 +42,15 @@ class WeatherLandscapeWidget extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  weekDayName,
-                                  style: textTheme.displayMedium,
+                                Expanded(
+                                  child: Text(
+                                    weekDayName,
+                                    style: textTheme.headline2!.copyWith(
+                                      fontSize: 20 * devicePixelRatio,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                                 IconButton(
                                   onPressed: () {
@@ -69,16 +76,22 @@ class WeatherLandscapeWidget extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(right: 16.0),
                               child: Image.network(
-                                _imageUrl(weather.selectedDay.weatherStateAbbr),
+                                _imageUrl(
+                                  weather.selectedDay.weatherStateAbbr,
+                                ),
                                 height: 100,
                               ),
                             ),
-                            Text(
-                              temperatureUnitCubit.state.convertTemperature(
-                                weather.selectedDay.theTemp,
-                                temperatureUnitCubit.state,
+                            Expanded(
+                              child: Text(
+                                temperatureUnitCubit.state.convertTemperature(
+                                  weather.selectedDay.theTemp,
+                                  temperatureUnitCubit.state,
+                                ),
+                                style: textTheme.headline1!.copyWith(
+                                  fontSize: devicePixelRatio * 40,
+                                ),
                               ),
-                              style: textTheme.headline1,
                             ),
                           ],
                         ),

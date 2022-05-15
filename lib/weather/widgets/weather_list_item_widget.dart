@@ -35,7 +35,7 @@ class WeatherListItemWidget extends StatelessWidget {
           ),
           Flexible(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(16.0),
               child: Image.network(
                 _imageUrl(
                   weatherDay.weatherStateAbbr,
