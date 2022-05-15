@@ -12,7 +12,7 @@ class WeatherPage extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => WeatherCubit(
-            weatherRepository: WeatherRepository(),
+            weatherRepository: context.read<WeatherRepository>(),
           )..getWeather(),
         ),
         BlocProvider(
