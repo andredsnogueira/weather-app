@@ -33,14 +33,9 @@ class WeatherListItemWidget extends StatelessWidget {
             weekDayName,
             style: textTheme.headline5,
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.network(
-                _imageUrl(
-                  weatherDay.weatherStateAbbr,
-                ),
-              ),
+          Image.network(
+            _imageUrl(
+              weatherDay.weatherStateAbbr,
             ),
           ),
           Text(

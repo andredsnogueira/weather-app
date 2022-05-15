@@ -22,6 +22,7 @@ class WeatherPortraitWidget extends StatelessWidget {
     );
     final textTheme = Theme.of(context).textTheme;
     final temperatureUnitCubit = context.watch<TemperatureUnitCubit>();
+    final devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -47,7 +48,9 @@ class WeatherPortraitWidget extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 weekDayName,
-                                style: textTheme.displayMedium,
+                                style: textTheme.headline2!.copyWith(
+                                  fontSize: 20 * devicePixelRatio,
+                                ),
                               ),
                             ),
                             IconButton(
@@ -70,28 +73,21 @@ class WeatherPortraitWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 16.0),
+                  Expanded(
                     child: Image.network(
                       _imageUrl(weather.selectedDay.weatherStateAbbr),
-                      height: constraints.maxHeight / 3,
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 48.0),
-                      child: Text(
-                        temperatureUnitCubit.state.convertTemperature(
-                          weather.selectedDay.theTemp,
-                          temperatureUnitCubit.state,
-                        ),
-                        style: textTheme.headline1,
-                      ),
+                  Text(
+                    temperatureUnitCubit.state.convertTemperature(
+                      weather.selectedDay.theTemp,
+                      temperatureUnitCubit.state,
+                    ),
+                    style: textTheme.headline1!.copyWith(
+                      fontSize: devicePixelRatio * 40,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 48.0),
+                  Flexible(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -115,7 +111,7 @@ class WeatherPortraitWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(
+                  Flexible(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: weather.weatherList.length,
