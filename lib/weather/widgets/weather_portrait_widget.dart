@@ -6,9 +6,9 @@ import '../weather.dart';
 
 class WeatherPortraitWidget extends StatelessWidget {
   const WeatherPortraitWidget({
-    Key? key,
+    super.key,
     required this.weather,
-  }) : super(key: key);
+  });
 
   final WeatherLoadSuccess weather;
 

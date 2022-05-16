@@ -6,9 +6,9 @@ import '../weather.dart';
 
 class WeatherListItemWidget extends StatelessWidget {
   const WeatherListItemWidget({
-    Key? key,
+    super.key,
     required this.weatherDay,
-  }) : super(key: key);
+  });
 
   final WeatherDay weatherDay;
 

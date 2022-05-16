@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class WeatherDetailItemWidget extends StatelessWidget {
   const WeatherDetailItemWidget({
-    Key? key,
+    super.key,
     required this.label,
     required this.icon,
     this.iconColor,
-  }) : super(key: key);
+  });
 
   final String label;
   final IconData icon;
